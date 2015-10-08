@@ -1,28 +1,32 @@
 # Assembly
 
-# Infos
+## Infos
 
 Fichier contenant des informations sur l'assembleur.
 Libre de droits, il peut être complété et corrigé par n'importe qui.
 (Soumis a validation)
 
-# Helloworld
+## Helloworld
 
 ./make -h for help
 => Hello World in asm
 
-# BufferOverflow
+## BufferOverflow
 
 Challenges de bufferoverflow avec une explication de qu'est ce qu'un BOF.
 Quelques "pro-tips".
 
-# Crack me
+## Crack me
+
+### Algo
 
 Un algo de chiffrement maison (symetrique):
 
 USAGE ./algo.x86_64 [KEY] [INPUT FILE] [OUTPUT FILE]
 (sources chiffrées selon ce meme algo, libre a vous de trouver le passwd. GL)
 (Utilisez le script pour tenter un passwd (plus court que la commande entière))
+
+### Challenges
 
 2 crackme maison:
 
