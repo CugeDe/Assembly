@@ -7,7 +7,7 @@
 ## 10/08/2015 <=> 10:34am
 ##
 
-CC		=	gcc
+CC		=	gcc -m32
 
 RM		=	rm -rf
 
@@ -15,9 +15,9 @@ SRCS		=	.src.private/main.c
 
 OBJS		=	$(SRCS:.c=.o)
 
-CFLAGS		=	-m32 -Wall -Wextra -fno-stack-protector
+CFLAGS		=	-Wall -Wextra -fno-stack-protector
 
-NAME		=	bof.i386
+NAME		=	bof
 
 all:			$(NAME)
 
