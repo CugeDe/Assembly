@@ -1,0 +1,9 @@
+#BOF
+ #src
+buffer_overflow/src/
+
+ #obj
+buffer_overflow/*.o
+
+#PRIVATE
+*.private

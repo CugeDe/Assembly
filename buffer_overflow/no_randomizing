@@ -1,0 +1,31 @@
+#!/bin/bash
+##
+## Makefile for BufferOverFlow
+##
+## Made by CugeDe
+## CugeDe <cugede.0x07ffff@gmail.com>
+##
+## 10/08/2015 <=> 10:34am
+##
+
+if [ "$1" = "on" -o "$1" = "ON" -o "$1" = "On" -o "$1" = "oN" ]
+then
+	if [[ $EUID -ne 0 ]]
+	then
+  		echo "You must be root or under sudo" 2>&1
+	else
+		echo 0 > /proc/sys/kernel/randomize_va_space
+		echo "You can now train for buffeoverflows. Have fun."
+	fi
+elif [ "$1" = "off" -o "$1" = "OFF" -o "$1" = "Off" -o "$1" = "OfF" -o "$1" = "OFf" -o "$1" = "oFF" -o "$1" = "ofF" -o "$1" = "oFf" ]
+then
+	if [[ $EUID -ne 0 ]]
+	then
+  		echo "You must be root or under sudo" 2>&1
+	else
+		echo 1 > /proc/sys/kernel/randomize_va_space
+		echo "You are now protected. Bye."
+	fi
+else
+	echo "[USAGE] $0 [\"on\"/\"off\"] (as root or sudo)"
+fi

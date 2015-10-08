@@ -1,0 +1,17 @@
+#!/bin/bash
+##
+## Makefile for BufferOverFlow
+##
+## Made by CugeDe
+## CugeDe <cugede.0x07ffff@gmail.com>
+##
+## 10/08/2015 <=> 2:15pm
+##
+
+if [ $# -eq 1 ]
+then
+	./algo.x86_64 "$1" ./.crypt_uncrypt_srcs/encrypt.crypt ./.crypt_uncrypt_srcs/encrypt.c
+	echo "Is it the good key ...?"
+else
+	echo "[USAGE] $0 [key]"
+fi
