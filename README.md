@@ -13,8 +13,9 @@ Libre de droits, il peut être complété et corrigé par n'importe qui.
 
 ## BufferOverflow
 
-Challenges de bufferoverflow avec une explication de qu'est ce qu'un BOF.  
-Quelques **"pro-tips"**.
+Challenges de bufferoverflow avec une explication de ce qu'est un BOF.  
+Quelques **"pro-tips"**.  
+(*en cours...*)
 
 ## Crack me
 
