@@ -1,0 +1,63 @@
+_______________________________________________________
+
+----------------------Registers:-----------------------
+_______________________________________________________
+
+[ RAX ] [00000000 00000000 00000000 00000000 // 00000000 00000000 // 00000000 // 00000000 ]
+[ EAX ]					      [ 00000000 00000000 // 00000000 // 00000000 ]
+[ AX ]								   [ 00000000 // 00000000 ]
+[ AH ][ AL ]							   [ 00000000 ][ 00000000 ]
+
+[ RBX ] [00000000 00000000 00000000 00000000 // 00000000 00000000 // 00000000 // 00000000 ]
+[ EBX ]					      [ 00000000 00000000 // 00000000 // 00000000 ]
+[ BX ]								   [ 00000000 // 00000000 ]
+[ BH ][ BL ]							   [ 00000000 ][ 00000000 ]
+
+[ RCX ] [00000000 00000000 00000000 00000000 // 00000000 00000000 // 00000000 // 00000000 ]
+[ ECX ]					      [ 00000000 00000000 // 00000000 // 00000000 ]
+[ CX ]								   [ 00000000 // 00000000 ]
+[ CH ][ CL ]							   [ 00000000 ][ 00000000 ]
+
+[ RDX ] [00000000 00000000 00000000 00000000 // 00000000 00000000 // 00000000 // 00000000 ]
+[ EDX ]					      [ 00000000 00000000 // 00000000 // 00000000 ]
+[ DX ]								   [ 00000000 // 00000000 ]
+[ DH ][ DL ]							   [ 00000000 ][ 00000000 ]
+_______________________________________________________
+
+-----------------------Memory:-------------------------
+_______________________________________________________
+
+MOV	copy a value in a register				(ex: MOV	0x4, %rax)
+PUSH	push a value to the top of stack			(ex: PUSH	%rbp)
+POP	pop data from stack					(ex: POP	%rax)
+_______________________________________________________
+
+-----------------------Jumps:--------------------------
+_______________________________________________________
+
+JIC: (Inconditionnal jumps)
+
+JMP	jump unconditionnaly to address				(ex: JMP	0804880)	-- without any reason
+
+JCC: (Conditionnal jumps)
+    Equal:
+JE	jump if equal						(ex: JE		0804880) 	-- cmp just before (or same)
+    Greater:
+JG	jump if greater						(ex: JG		0804880) 	-- cmp just before (or same)
+JGE	jump if greater or equal				(ex: JGE	0804880)	-- cmp just before (or same)
+    Below:
+JB	jump if below						(ex: JB		0804880)	-- cmp just before (or same)
+JBE	jump if below or equal					(ex: JBE	0804880)	-- cmp just before (or same)
+_______________________________________________________
+
+---------------------Operations:-----------------------
+_______________________________________________________
+
+ADD	Addition						(ex: ADD	%rsp, 0x130)
+SUB	Substraction						(ex: SUB	%rsp, 0x130)
+DIV	Unsigned divide						(ex: DIV	)
+INC	Incrementation by 1					(ex: INC	%rax)
+DEC	Decrementation by 1					(ex: DEC	%rax)
+AND	Binary AND						(ex: AND	)
+OR	Binary OR						(ex: OR		)
+XOR	Binary XOR						(ex: XOR	)

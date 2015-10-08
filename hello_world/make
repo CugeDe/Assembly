@@ -1,0 +1,53 @@
+#!/bin/bash
+
+src="src/hello_world.asm";
+obj="hello_world.o";
+bin="hello_world";
+
+echo "/********************************/";
+echo "/**   HELLO_WORLD COMPILATOR   **/";
+echo "/********************************/";
+echo;
+if [ \( "$#" = "0" \) -o \( "$1" = "-h" \) ]
+then
+	echo -e "[USAGE]:\n $0 [-h/clean]\nOR\n$0 [format] ([action])";
+	echo;
+	echo "format: elf32 => 32 bits/ elf64 => 64 bits";
+	echo "action: obj => compilation / ld => linking / (NULL => obj + ld)";
+	echo
+elif [ "$1" = "clean" ]
+then
+	echo "Trying to remove all \"useless\" files..."
+	rm $obj $bin
+elif [ "$2" = "obj" ]
+then
+	echo "Trying to generate $obj from $src..."
+	nasm $src -f $1 -o $obj
+elif [ "$2" = "ld" ]
+then
+	echo "Trying to link $obj to make bin..."
+	if [ "$1" = "elf32" ]
+	then
+		ld $obj -o $bin -melf_i386;
+	else
+		ld $obj -o $bin -A -melf_x86_64
+	fi
+else
+	echo "Trying to generate $obj from $src..."
+	nasm $src -f $1 -o $obj &&
+	echo "Done."
+	echo "Trying to link $obj to make bin..."
+	if [ "$1" = "elf32" ]
+	then
+		ld $obj -o $bin -melf_i386;
+	else
+		ld $obj -o $bin -A -melf_x86_64
+	fi
+fi
+if [ "$(echo $?)" = "0" ]
+then
+	echo "SUCCESS"
+else
+	echo
+	echo "SOMETHING WENT WRONG. CHECK YOUR FILES."
+fi
