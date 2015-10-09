@@ -15,7 +15,7 @@ then
   		echo "You must be root or under sudo" 2>&1
 	else
 		echo 0 > /proc/sys/kernel/randomize_va_space
-		echo "You can now train for buffeoverflows. Have fun."
+		echo "You can now train for bufferoverflows. Have fun."
 	fi
 elif [ "$1" = "off" -o "$1" = "OFF" -o "$1" = "Off" -o "$1" = "OfF" -o "$1" = "OFf" -o "$1" = "oFF" -o "$1" = "ofF" -o "$1" = "oFf" ]
 then
